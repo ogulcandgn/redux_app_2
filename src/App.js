@@ -12,8 +12,8 @@ function App() {
   return (
     <main>
       <Header user={user} setUser={setUser} />
-      <AddTodo setTodos={setTodos} />
-      <TodoList todos={todos} />
+      <AddTodo setTodos={setTodos} user={user} />
+      <TodoList todos={todos} user={user} />
     </main>
   );
 }

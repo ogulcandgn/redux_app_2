@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
-function AddTodo({ setTodos }) {
+function AddTodo({ setTodos, user }) {
   const [todo, setTodo] = useState("");
 
   const submitHandle = (e) => {
@@ -11,7 +11,7 @@ function AddTodo({ setTodos }) {
         title: todo,
         done: false,
         id: nanoid(),
-        user: 1,
+        user: user.id,
       },
       ...todos,
     ]);
@@ -26,7 +26,8 @@ function AddTodo({ setTodos }) {
         onChange={(e) => setTodo(e.target.value)}
         placeholder="değer giriniz"
       />
-      <button disabled={!todo} type="submit">
+      {/* user yada todo yoksa ekleme olmayacak */}
+      <button disabled={!todo || !user} type="submit">
         Ekle
       </button>
     </form>

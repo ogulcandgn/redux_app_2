@@ -1,4 +1,4 @@
-function TodoItem({ todo }) {
+function TodoItem({ todo, user }) {
   const deleteHandle = () => {};
 
   const editHandle = () => {};
@@ -6,10 +6,15 @@ function TodoItem({ todo }) {
   return (
     <li>
       <span style={{ textDecoration: todo.done ? "line-through" : false }}>
-        {todo.title} - {todo.id}
+        {todo.title} - {todo.user}
       </span>
-      <button onClick={editHandle}>Düzenle</button>
-      <button onClick={deleteHandle}>Sil</button>
+
+      {todo.user === user.id && (
+        <>
+          <button onClick={editHandle}>Düzenle</button>
+          <button onClick={deleteHandle}>Sil</button>
+        </>
+      )}
     </li>
   );
 }
