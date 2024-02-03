@@ -1,7 +1,14 @@
-function TodoItem({ todo, user }) {
-  const deleteHandle = () => {};
+function TodoItem({ todo, user, setTodos, setModal }) {
+  const deleteHandle = () => {
+    setTodos((todos) => todos.filter((t) => t.id !== todo.id));
+  };
 
-  const editHandle = () => {};
+  const editHandle = () => {
+    setModal({
+      name: "edit-todo",
+      data: todo,
+    });
+  };
 
   return (
     <li>
