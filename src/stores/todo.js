@@ -9,7 +9,7 @@ const todos = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
-      state.todos = [action.payload, ...todos];
+      state.todos = [action.payload, ...state.todos];
     },
     deleteTodo: (state, action) => {
       state.todos = state.todos.filter !== action.payload;

@@ -1,9 +1,9 @@
 import TodoItem from "./item";
 //global olarak kullanmak istersek
-import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function TodoList({ user, setModal }) {
-  const { todos } = useDispatch((state) => state.todo);
+  const { todos } = useSelector((state) => state.todo);
 
   return (
     <ul>
