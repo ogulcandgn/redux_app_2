@@ -1,6 +1,10 @@
-function TodoItem({ todo, user, setTodos, setModal }) {
+import { deleteTodo } from "../stores/todo";
+import { useDispatch } from "react-redux";
+
+function TodoItem({ todo, user, setModal }) {
+  const dispatch = useDispatch();
   const deleteHandle = () => {
-    setTodos((todos) => todos.filter((t) => t.id !== todo.id));
+    dispatch(deleteTodo(todo.id));
   };
 
   const editHandle = () => {

@@ -5,7 +5,6 @@ import AddTodo from "./todo/add";
 import Modal from "./todo/modal";
 
 function App() {
-  const [todos, setTodos] = useState([]);
   const [user, setUser] = useState(false);
   const [language, setLanguage] = useState("tr"); //todo
   const [dark, setDark] = useState(true); //todo
@@ -21,13 +20,8 @@ function App() {
         <Modal name={modal.name} data={modal.data} closeModal={closeModal} />
       )}
       <Header user={user} setUser={setUser} />
-      <AddTodo setTodos={setTodos} user={user} />
-      <TodoList
-        todos={todos}
-        setTodos={setTodos}
-        user={user}
-        setModal={setModal}
-      />
+      <AddTodo user={user} />
+      <TodoList user={user} setModal={setModal} />
     </main>
   );
 }
