@@ -2,9 +2,11 @@ import { useState } from "react";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../stores/todo";
+import { useSelector } from "react-redux";
 
-function AddTodo({ user }) {
+function AddTodo() {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
   const [todo, setTodo] = useState("");
 
   const submitHandle = (e) => {

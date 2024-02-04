@@ -2,8 +2,9 @@ import TodoItem from "./item";
 //global olarak kullanmak istersek
 import { useSelector } from "react-redux";
 
-function TodoList({ user, setModal }) {
+function TodoList({ setModal }) {
   const { todos } = useSelector((state) => state.todo);
+  const { user } = useSelector((state) => state.auth);
 
   return (
     <ul>
