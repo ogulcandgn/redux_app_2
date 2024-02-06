@@ -13,10 +13,6 @@ function App() {
   const dispatch = useDispatch();
   const { open } = useSelector((state) => state.modal);
 
-  const closeModal = () => {
-    dispatch(closeModal);
-  };
-
   return (
     <main>
       {open && <Modal />}

@@ -10,6 +10,7 @@ const store = configureStore({
   reducer: {
     todo,
     auth,
+    modal,
   },
 });
 
