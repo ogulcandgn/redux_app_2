@@ -1,7 +1,9 @@
 import { deleteTodo } from "../stores/todo";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-function TodoItem({ todo, user, setModal }) {
+function TodoItem({ todo, setModal }) {
+  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const deleteHandle = () => {
     dispatch(deleteTodo(todo.id));

@@ -1,8 +1,13 @@
-function Modal({ name, data, closeModal }) {
+import modals from "../modals";
+import { useSelector } from "react-redux";
+
+function Modal() {
+  const { name, data } = useSelector((state) => state.modal);
+  const modal = modals.find((m) => m.name === name);
+
   return (
     <div>
-      modal içeriği
-      <button onClick={closeModal}>Modalı kapat</button>
+      <modal.element />
     </div>
   );
 }
