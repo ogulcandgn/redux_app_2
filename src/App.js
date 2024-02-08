@@ -7,15 +7,15 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
 function App() {
-  const [language, setLanguage] = useState("tr"); //todo
+  const [language, setLanguage] = useState("tr");
   const [dark, setDark] = useState(true); //todo
 
   const dispatch = useDispatch();
-  const { open } = useSelector((state) => state.modal);
+  const { open: isModalOpen } = useSelector((state) => state.modal);
 
   return (
     <main>
-      {open && <Modal />}
+      {isModalOpen && <Modal />}
       <Header />
       <AddTodo />
       <TodoList />
